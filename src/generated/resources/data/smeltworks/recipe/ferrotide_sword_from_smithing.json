@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "smeltworks:ferrotide_ingot"
+  },
+  "base": {
+    "item": "minecraft:diamond_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "smeltworks:ferrotide_sword"
+  },
+  "template": {
+    "item": "smeltworks:ferrotide_upgrade_smithing_template"
+  }
+}

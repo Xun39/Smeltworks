@@ -1,5 +1,19 @@
 {
-  "itemGroup.smeltworks": "Example Mod Tab",
-  "block.smeltworks.example_block": "Example Block",
-  "item.smeltworks.example_item": "Example Item"
+  "item.smeltworks.raw_titanium": "Raw Titanium",
+  "item.smeltworks.titanium_ingot": "Titanium Ingot",
+
+  "item.smeltworks.ferrotide_plate": "Ferrotide Plate",
+  "item.smeltworks.ferrotide_ingot": "Ferrotide Ingot",
+  "item.smeltworks.ferrotide_upgrade_smithing_template": "Smithing Template",
+
+  "item.smeltworks.ferrotide_sword": "Ferrotide Sword",
+
+  "block.smeltworks.titanium_ore": "Titanium Ore",
+  "block.smeltworks.deepslate_titanium_ore": "Deepslate Titanium Ore",
+
+  "upgrade.smeltworks.ferrotide_upgrade": "Ferrotide Upgrade",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.applies_to": "Diamond Equipment",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.ingredients": "Ferrotide Ingot",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.base_slot_description": "Add diamond armor, weapon, or tool",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.additions_slot_description": "Add Ferrotide Inogt"
 }

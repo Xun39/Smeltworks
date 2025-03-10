@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smeltworks:ferrotide_ingot"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "smeltworks:ferrotide_plate"
+  }
+}

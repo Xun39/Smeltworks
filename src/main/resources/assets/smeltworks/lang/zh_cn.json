@@ -1,0 +1,20 @@
+{
+  "item.smeltworks.raw_titanium": "粗钛",
+  "item.smeltworks.titanium_ingot": "钛锭",
+
+  "item.smeltworks.ferrotide_plate": "钛铁合金板",
+  "item.smeltworks.ferrotide_ingot": "钛铁合金",
+
+  "item.smeltworks.ferrotide_upgrade_smithing_template": "锻造模板",
+
+  "item.smeltworks.ferrotide_sword": "钛铁合金剑",
+
+  "block.smeltworks.titanium_ore": "钛矿石",
+  "block.smeltworks.deepslate_titanium_ore": "深层钛矿石",
+
+  "upgrade.smeltworks.ferrotide_upgrade": "钛铁升级",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.applies_to": "钻石装备",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.ingredients": "钛铁合金锭",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.base_slot_description": "放入钻石盔甲、武器或工具",
+  "item.smeltworks.smithing_template.ferrotide_upgrade.additions_slot_description": "放入钛铁合金锭"
+}
