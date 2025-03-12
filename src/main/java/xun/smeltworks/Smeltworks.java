@@ -8,32 +8,19 @@ import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import xun.smeltworks.registry.SArmorMaterials;
 import xun.smeltworks.registry.SBlocks;
+import xun.smeltworks.registry.SGlobalLootModifierSerializers;
 import xun.smeltworks.registry.SItems;
 
 @Mod(Smeltworks.MOD_ID)
@@ -55,6 +42,9 @@ public class Smeltworks {
 
         SItems.ITEMS.register(modEventBus);
         SBlocks.BLOCKS.register(modEventBus);
+
+        SArmorMaterials.ARMOR_MATERIALS.register(modEventBus);
+        SGlobalLootModifierSerializers.GLOBAL_LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
 
         neoForgeEventBus.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -78,6 +68,28 @@ public class Smeltworks {
         if (tab == CreativeModeTabs.NATURAL_BLOCKS) {
             insertAfter(event, Blocks.DEEPSLATE_GOLD_ORE, SBlocks.TITANIUM_ORE);
             insertAfter(event, SBlocks.TITANIUM_ORE, SBlocks.DEEPSLATE_TITANIUM_ORE);
+            insertAfter(event, Blocks.RAW_GOLD_BLOCK, SBlocks.RAW_TITANIUM_BLOCK);
+        }
+
+        if (tab == CreativeModeTabs.BUILDING_BLOCKS) {
+            insertAfter(event, Blocks.DIAMOND_BLOCK, SBlocks.TITANIUM_BLOCK);
+            insertAfter(event, Blocks.NETHERITE_BLOCK, SBlocks.FERROTIDE_BLOCK);
+        }
+
+        if (tab == CreativeModeTabs.COMBAT) {
+            insertAfter(event, Items.NETHERITE_SWORD, SItems.FERROTIDE_SWORD);
+            insertAfter(event, Items.NETHERITE_AXE, SItems.FERROTIDE_AXE);
+            insertAfter(event, Items.NETHERITE_BOOTS, SItems.FERROTIDE_HELMET);
+            insertAfter(event, SItems.FERROTIDE_HELMET, SItems.FERROTIDE_CHESTPLATE);
+            insertAfter(event, SItems.FERROTIDE_CHESTPLATE, SItems.FERROTIDE_LEGGINGS);
+            insertAfter(event, SItems.FERROTIDE_LEGGINGS, SItems.FERROTIDE_BOOTS);
+        }
+
+        if (tab == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            insertAfter(event, Items.NETHERITE_HOE, SItems.FERROTIDE_SHOVEL);
+            insertAfter(event, SItems.FERROTIDE_SHOVEL, SItems.FERROTIDE_PICKAXE);
+            insertAfter(event, SItems.FERROTIDE_PICKAXE, SItems.FERROTIDE_AXE);
+            insertAfter(event, SItems.FERROTIDE_AXE, SItems.FERROTIDE_HOE);
         }
     }
 
@@ -86,15 +98,7 @@ public class Smeltworks {
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+    private void onSeverStarting(ServerStartingEvent event) {
 
-    }
-
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-
-        }
     }
 }

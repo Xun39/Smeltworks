@@ -4,11 +4,12 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import xun.smeltworks.Smeltworks;
+import xun.smeltworks.util.TextUtils;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public abstract class SRecipeProvider extends RecipeProvider {
@@ -17,18 +18,25 @@ public abstract class SRecipeProvider extends RecipeProvider {
         super(output, registries);
     }
 
-    protected void rawOre(ItemLike rawOre, ItemLike smeltOre) {
-        smelting(RecipeCategory.MISC, 200, rawOre, smeltOre, 0.7F, 1);
-        blasting(RecipeCategory.MISC, 100, rawOre, smeltOre, 0.7F, 1);
+    protected void ores(RecipeOutput recipeOutput, List<ItemLike> smeltableOres, ItemLike result, String group) {
+        smelting(recipeOutput, RecipeCategory.MISC, 200, smeltableOres, result, 0.7F, group);
+        blasting(recipeOutput, RecipeCategory.MISC, 100, smeltableOres, result, 0.7F, group);
     }
 
-    protected SimpleCookingRecipeBuilder smelting(RecipeCategory category, int cookingTime, ItemLike ingredient, ItemLike result, float exp, int count) {
-        return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(ingredient, count)), category, result, exp, cookingTime)
-                .unlockedBy("has_" + getRegistryName(ingredient), has(ingredient));
+    protected static void smelting(RecipeOutput recipeOutput, RecipeCategory category, int cookingTime, List<ItemLike> ingredients, ItemLike result, float exp, String group) {
+        cooking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new, ingredients, category, result, exp, cookingTime, group, "_from_smelting");
     }
-    protected SimpleCookingRecipeBuilder blasting(RecipeCategory category, int cookingTime, ItemLike ingredient, ItemLike result, float exp, int count) {
-        return SimpleCookingRecipeBuilder.blasting(Ingredient.of(new ItemStack(ingredient, count)), category, result, exp, cookingTime)
-                .unlockedBy("has_" + getRegistryName(ingredient), has(ingredient));
+
+    protected static void blasting(RecipeOutput recipeOutput, RecipeCategory category, int cookingTime, List<ItemLike> ingredients, ItemLike result, float exp, String group) {
+        cooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, ingredients, category, result, exp, cookingTime, group, "_from_blasting");
+    }
+
+    protected static <T extends AbstractCookingRecipe> void cooking(RecipeOutput recipeOutput, RecipeSerializer<T> cookingSerializer, AbstractCookingRecipe.Factory<T> factory,
+                                                                    List<ItemLike> ingredients, RecipeCategory category, ItemLike result, float experience, int cookingTime, String group, String recipeName) {
+        for(ItemLike itemlike : ingredients) {
+            SimpleCookingRecipeBuilder.generic(Ingredient.of(itemlike), category, result, experience, cookingTime, cookingSerializer, factory).group(group).unlockedBy(getHasName(itemlike), has(itemlike))
+                    .save(recipeOutput, TextUtils.getId(getItemName(result) + recipeName, getItemName(itemlike)));
+        }
     }
 
     protected static void twoByTwo(RecipeOutput output, ItemLike ingredient, ItemLike result, int count, RecipeCategory recipeCategory) {

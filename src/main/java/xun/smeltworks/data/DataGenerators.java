@@ -40,8 +40,8 @@ public class DataGenerators {
         // generator.addProvider(server, new ModEntityTypeTags(output, registries, helper));
         // generator.addProvider(server, new ModBiomeTags(output, registries, helper));
 
-        // generator.addProvider(server, new ModGlobalLootModifiers(output, registries));
-        // generator.addProvider(server, new ModDatapackEntries(output, registries));
+        generator.addProvider(server, new SGlobalLootModifiers(output, registries));
+        generator.addProvider(server, new SDatapackEntries(output, registries));
 
     }
 }

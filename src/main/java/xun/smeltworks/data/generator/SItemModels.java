@@ -22,5 +22,14 @@ public class SItemModels extends SItemModelProvider {
         basicItem(SItems.FERROTIDE_UPGRADE_SMITHING_TEMPLATE.get());
 
         handheldItem(SItems.FERROTIDE_SWORD);
+        handheldItem(SItems.FERROTIDE_PICKAXE);
+        handheldItem(SItems.FERROTIDE_AXE);
+        handheldItem(SItems.FERROTIDE_HOE);
+        handheldItem(SItems.FERROTIDE_SHOVEL);
+
+        trimmedArmorItem(SItems.FERROTIDE_HELMET);
+        trimmedArmorItem(SItems.FERROTIDE_CHESTPLATE);
+        trimmedArmorItem(SItems.FERROTIDE_LEGGINGS);
+        trimmedArmorItem(SItems.FERROTIDE_BOOTS);
     }
 }

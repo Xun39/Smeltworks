@@ -22,12 +22,18 @@ public class SBlockTags extends BlockTagsProvider {
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 SBlocks.TITANIUM_ORE.get(),
-                SBlocks.DEEPSLATE_TITANIUM_ORE.get()
+                SBlocks.DEEPSLATE_TITANIUM_ORE.get(),
+                SBlocks.RAW_TITANIUM_BLOCK.get(),
+                SBlocks.TITANIUM_BLOCK.get(),
+                SBlocks.FERROTIDE_BLOCK.get()
         );
 
-        tag(BlockTags.NEEDS_IRON_TOOL).add(
+        tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 SBlocks.TITANIUM_ORE.get(),
-                SBlocks.DEEPSLATE_TITANIUM_ORE.get()
+                SBlocks.DEEPSLATE_TITANIUM_ORE.get(),
+                SBlocks.RAW_TITANIUM_BLOCK.get(),
+                SBlocks.TITANIUM_BLOCK.get(),
+                SBlocks.FERROTIDE_BLOCK.get()
         );
     }
 }

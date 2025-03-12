@@ -7,9 +7,22 @@
   "item.smeltworks.ferrotide_upgrade_smithing_template": "Smithing Template",
 
   "item.smeltworks.ferrotide_sword": "Ferrotide Sword",
+  "item.smeltworks.ferrotide_pickaxe": "Ferrotide Pickaxe",
+  "item.smeltworks.ferrotide_axe": "Ferrotide Axe",
+  "item.smeltworks.ferrotide_hoe": "Ferrotide Hoe",
+  "item.smeltworks.ferrotide_shovel": "Ferrotide Shovel",
+
+  "item.smeltworks.ferrotide_helmet": "Ferrotide Helmet",
+  "item.smeltworks.ferrotide_chestplate": "Ferrotide Chesplate",
+  "item.smeltworks.ferrotide_leggings": "Ferrotide Leggings",
+  "item.smeltworks.ferrotide_boots": "Ferrotide Boots",
 
   "block.smeltworks.titanium_ore": "Titanium Ore",
   "block.smeltworks.deepslate_titanium_ore": "Deepslate Titanium Ore",
+
+  "block.smeltworks.raw_titanium_block": "Block of Raw Titanium",
+  "block.smeltworks.titanium_block": "Block of Titanium",
+  "block.smeltworks.ferrotide_block": "Block of Ferrotide",
 
   "upgrade.smeltworks.ferrotide_upgrade": "Ferrotide Upgrade",
   "item.smeltworks.smithing_template.ferrotide_upgrade.applies_to": "Diamond Equipment",

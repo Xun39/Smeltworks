@@ -1,6 +1,9 @@
 {
   "values": [
     "smeltworks:titanium_ore",
-    "smeltworks:deepslate_titanium_ore"
+    "smeltworks:deepslate_titanium_ore",
+    "smeltworks:raw_titanium_block",
+    "smeltworks:titanium_block",
+    "smeltworks:ferrotide_block"
   ]
 }

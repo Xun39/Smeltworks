@@ -16,5 +16,9 @@ public class SBlockSates extends SBlockStateProvider {
 
         blockWithItem(SBlocks.TITANIUM_ORE);
         blockWithItem(SBlocks.DEEPSLATE_TITANIUM_ORE);
+
+        blockWithItem(SBlocks.RAW_TITANIUM_BLOCK);
+        blockWithItem(SBlocks.TITANIUM_BLOCK);
+        blockWithItem(SBlocks.FERROTIDE_BLOCK);
     }
 }

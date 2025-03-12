@@ -33,6 +33,10 @@ public class SLootTables extends LootTableProvider {
 
             dropOtherWithoutSilkTouch(SBlocks.TITANIUM_ORE, SItems.RAW_TITANIUM);
             dropOtherWithoutSilkTouch(SBlocks.DEEPSLATE_TITANIUM_ORE, SItems.RAW_TITANIUM);
+
+            dropSelf(SBlocks.RAW_TITANIUM_BLOCK.get());
+            dropSelf(SBlocks.TITANIUM_BLOCK.get());
+            dropSelf(SBlocks.FERROTIDE_BLOCK.get());
         }
 
         @Override

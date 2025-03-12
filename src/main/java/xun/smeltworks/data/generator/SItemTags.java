@@ -31,12 +31,17 @@ public class SItemTags extends ItemTagsProvider {
                 SItems.FERROTIDE_INGOT.get()
         );
 
-        tag(ItemTags.TRIM_TEMPLATES).add(
-                SItems.FERROTIDE_UPGRADE_SMITHING_TEMPLATE.get()
-        );
+        tag(ItemTags.TRIM_TEMPLATES).add(SItems.FERROTIDE_UPGRADE_SMITHING_TEMPLATE.get());
 
-        tag(ItemTags.SWORDS).add(
-                SItems.FERROTIDE_SWORD.get()
-        );
+        tag(ItemTags.SWORDS).add(SItems.FERROTIDE_SWORD.get());
+        tag(ItemTags.PICKAXES).add(SItems.FERROTIDE_PICKAXE.get());
+        tag(ItemTags.AXES).add(SItems.FERROTIDE_AXE.get());
+        tag(ItemTags.HOES).add(SItems.FERROTIDE_HOE.get());
+        tag(ItemTags.SHOVELS).add(SItems.FERROTIDE_SHOVEL.get());
+
+        tag(ItemTags.HEAD_ARMOR).add(SItems.FERROTIDE_HELMET.get());
+        tag(ItemTags.CHEST_ARMOR).add(SItems.FERROTIDE_CHESTPLATE.get());
+        tag(ItemTags.LEG_ARMOR).add(SItems.FERROTIDE_LEGGINGS.get());
+        tag(ItemTags.FOOT_ARMOR).add(SItems.FERROTIDE_BOOTS.get());
     }
 }
